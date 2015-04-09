@@ -13,8 +13,14 @@ while True:
     input = raw_input("> ")
     tokens = input.split(" ")
     operator = tokens[0]
-    num1 = int(tokens[1])
-    num2 = int(tokens[-1])
+    if "." in tokens[1]:
+        num1 = float(tokens[1])
+    else:
+        num1 = int(tokens[1])
+    if "." in tokens[2]:
+        num2 = float(tokens[2])
+    else:
+        num2 = int(tokens[-1])
     
     if operator == "q":
         break
