@@ -12,15 +12,19 @@ from arithmetic import *
 while True:
     input = raw_input("> ")
     tokens = input.split(" ")
+    num_operands = len(tokens)-1
     operator = tokens[0]
-    if "." in tokens[1]:
-        num1 = float(tokens[1])
-    else:
-        num1 = int(tokens[1])
-    if "." in tokens[2]:
-        num2 = float(tokens[2])
-    else:
-        num2 = int(tokens[-1])
+    
+    for n in range(num_operands):
+        if "." in tokens[n+1]:
+            num1 = float(tokens[n+1]) # need to figure out how to increment variable names
+        else:
+            num1 = int(tokens[n+1])     # same as above
+
+    # if "." in tokens[-1]:
+    #     num2 = float(tokens[-1])
+    # else:
+    #     num2 = int(tokens[-1])
     
     if operator == "q":
         break
